@@ -1,25 +1,23 @@
 #!/usr/bin/python3
 
-PT="DUMMY"
-CT="DUMMY"
 
-for i in range(100000,0,-1):
-  x=i%10
-  y=int(i/10)%10
-  z=int(i/100)%10
-  a=int(i/1000)%10
-  b=int(i/10000)%10
+# Generates a script to try all 252 partitions of XOR wheels for given CT
+# for known PT attack on T52.  The CUDA program T52abKnownPT only
+# addresses one partition at a time so must be invoked 252 times.
 
+# Defaults to GPU 0, but for a multi GPU system you could use different
+# GPUs
 
-  if (x<=y): continue
-  if (x<=z): continue
-  if (x<=a): continue
-  if (x<=b): continue
-  if (y<=z): continue
-  if (y<=a): continue
-  if (y<=b): continue
-  if (z<=a): continue
-  if (z<=b): continue
-  if (a<=b): continue
+# Does partitions in order of shortest first as this increaes likelihood of
+# finding the solution early.  56789 is shortest as these are the smallest
+# wheels
 
-  print ("./T52abKnownPT 0 "+str(b)+str(a)+str(z)+str(y)+str(x)+" "+PT+" "+CT)
+import itertools
+PT="EVERYTHINGS9COMING9??9MIL???"
+CT="VVX3XVIVLGYFRVIF/UURRG9ZAOQ8EK"
+# This CT has wheels 5,6,7,8,9 as the XOR wheels and 64,61,59,53,47 as the respective offsets.
+
+combs=reversed(sorted(list(itertools.combinations('0123456789',5)))) #10 choose 5
+
+for c in combs:
+  print ("./T52abKnownPT 0 "+''.join(i for i in c)+" "+PT+" "+CT)

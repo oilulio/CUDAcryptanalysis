@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+
+#Partial automatic code generation (of lookup table)
+
 import itertools
 
 for p in itertools.permutations([0,1,2,3,4]): # All permutations of 5 bits
 
-  #print p
   out="{"
   crosschk=0
   for c in range(32): # All 5 bit patterns
@@ -17,3 +19,4 @@ for p in itertools.permutations([0,1,2,3,4]): # All permutations of 5 bits
     crosschk+=x
 
   print (out+"},")
+

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# Code generation assist script for pin wheel patterns
+
 PIN_PATTERNS = [# 
 #  1234567890123456789012345678901234567890123456789012345678901234567890123
   ".xx.xxx...x..xx..x..xxxx..xxx.x.x.xxx..xx..xxx.xx.....xxx...xxxx.x......x", # A73\

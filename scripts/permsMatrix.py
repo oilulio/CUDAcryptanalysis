@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+
+# Code generation assist for permutation matrix look up table
+
 import itertools
 
 out=""
