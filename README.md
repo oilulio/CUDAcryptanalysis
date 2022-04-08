@@ -12,7 +12,7 @@ This uses GPU 0 and wheels 01234 to solve for the wheel order and the wheel star
 
 the script scripts/PrepKnown.py will generate the 252 invocations to test all possible wheels
 
-b>T52abUnknownPT</b> : takes a short ciphertext/plaintext pair and solve for the XOR wheels of the T52ab Sturgeon cipher machine.  The algorithm is explained at https://oilulio.wordpress.com/2022/04/08/cuda-versus-t52ab-unknown-plaintext/
+<b>T52abUnknownPT</b> : takes a short ciphertext/plaintext pair and solve for the XOR wheels of the T52ab Sturgeon cipher machine.  The algorithm is explained at https://oilulio.wordpress.com/2022/04/08/cuda-versus-t52ab-unknown-plaintext/
 
 The wheels (from the set 0-9) must be specified, although their order is immaterial.
 
